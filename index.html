@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!--
+    Sistema de Alunos - CRUD
+    - index.html mostra a lista de alunos e ações (Novo, Editar, Excluir)
+    - O botão 'Novo Aluno' abre form.html para criar um novo registro
+    - A página carrega o script js/script.simple.js que:
+        * Faz requisições GET para listar alunos
+        * Exclui alunos via DELETE
+        * Atualiza a tabela no DOM
+    - Para editar, a aplicação abre: form.html?id=<id>
+    Observação: Sirva esta pasta por HTTP (ex.: npx http-server . --cors) para evitar problemas de CORS no navegador.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD Alunos</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <nav class="navbar navbar-dark bg-primary mb-4">
+    <div class="container">
+      <a class="navbar-brand" href="#">Sistema de Alunos</a>
+      <span class="navbar-text">CRUD - Prática 06</span>
+    </div>
+  </nav>
+
+  <main class="container py-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h3 class="mb-0">Lista de Alunos</h3>
+          <a href="form.html" class="btn btn-success">Novo Aluno</a>
+        </div>
+
+        <div id="loading" style="display:none;" class="mb-3"></div>
+        <div id="message" style="display:none;" class="mb-3"></div>
+
+        <div class="card">
+          <div class="card-body p-2">
+            <div class="table-responsive">
+              <table id="alunos-table" class="table table-sm table-hover mb-0">
+                <thead class="table-light">
+                  <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Turma</th>
+                    <th>Curso</th>
+                    <th>Matrícula</th>
+                    <th style="width:120px;">Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- alunos -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-white py-3 border-top">
+    <div class="container text-center text-muted">
+      &copy; 2025 - Prática 06 - Programação Web - Newton Paiva
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS (Bundle inclui Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>
