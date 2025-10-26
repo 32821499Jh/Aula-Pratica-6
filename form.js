@@ -99,3 +99,4 @@ form.addEventListener('submit', salvar);
 // Se houver ?id= na URL, carrega o aluno para edição
 const params = new URLSearchParams(location.search); 
 if(params.has('id')) carregar(params.get('id'));
+
